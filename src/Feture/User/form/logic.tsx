@@ -60,10 +60,14 @@ const Logic = () => {
       console.log(formValues);
 
       await fetch(
-        "https://script.google.com/macros/s/AKfycbwKXEyXEuAOCZ9YWrBgi8Esz7MVP5bdDTj6i6cKafz7iwi8Mc_QuyEHj5rhzlldLPQD/exec",
+        "https://script.google.com/macros/s/AKfycbxbQXpo1eo72xBOH1EgoXLuYHVVGc1Odd7Dr0-n591P7zmviSfv-cmsV9TTK9LZagff/exec",
         {
+          redirect: "follow",
           method: "POST",
           body: JSON.stringify(formValues),
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
         }
       )
         .then((res) => res.json())
